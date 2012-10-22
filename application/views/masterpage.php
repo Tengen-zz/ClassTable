@@ -5,7 +5,7 @@
 <body>
     <table>
         <tr>
-            <td><h1>Супер fgfgfhgfghhfh!</h1>
+            <td><h1>Super fgfgfhgfghhfh!</h1>
             </td>
         </tr>
         <tr>
