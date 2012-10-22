@@ -14,7 +14,7 @@ class Controller_Security extends Controller {
                 $this->request->redirect('/group/read/'.$student->group_id);
             }
             else{
-                $tthis->request->redirect('/security/login/');
+                $this->request->redirect('/security/login/');
             }
 
         } else {

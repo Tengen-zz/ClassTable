@@ -4,7 +4,7 @@
 </head>
 <body>
 <form method="post" action="/group/update/<?=$group_id?>">
-    <input name="name" type="text"/>
+    <input name="name" type="text" value="<?=$group->name?>"/>
     <input type="submit" value="Изменить"/>
 </form>
 </body>

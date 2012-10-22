@@ -1,14 +1,15 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Group extends Controller {
+class Controller_Group extends Controller_Site {
 
 	public function action_index()
 	{
         $groups = ORM::factory('group')->find_all();
         $view = View::factory('group/list');
         $view->groups123 = $groups;
-        $this->response->body($view);
-	}
+        //$this->response->body($view);
+	    $this->template->body = $view;
+    }
 
     public function action_create()
     {
@@ -19,44 +20,27 @@ class Controller_Group extends Controller {
             $this->request->redirect('/group/read/'.$group->id);
         } else {
             $view = View::factory('group/create');
-            $this->response->body($view);
+            $this->template->body = $view;
         }
     }
 
     public function action_read()
     {
-
         $group_id = $this->request->param('id');
         $group = ORM::factory('group', $group_id);
         $session = Session::instance();
         $session->set('group_id',$group_id);
         $stud_id=$session->get('stud_id');
-        echo 'Группа '.$group->name.'</br>';
+
         $s=ORM::factory('student',$stud_id);
-        if($s->is_admin!=0){
-            echo '<a href="/group/delete/'.$group->id.'">Удалить группу</a>';
-            echo '<br>';
-            echo '<a href="/group/update/'.$group->id.'">Изменить группу</a>';
-            echo '<br>';
-        }
+        $view = View::factory('group/studlist');
+        $view->group = $group;
+        $view->group_id= $group->id;
+        $view->is_admin= $s->is_admin;
         $students = ORM::factory('student')->find_all();
-        foreach ($students as $student){
-
-            if($student->group_id == $group_id){
-            echo '<a href="/student/read/'.$student->id.'">'.$student->name.'</a>';
-            echo '<br>';
-            }
-        }
-        if($s->is_admin!=0){
-        echo '<a href="/student/create">Добавить студента</a>';
-        }
-        echo '<a href="/group/index/">Список групп</a>';
-        if($stud_id==NULL){
-            echo '<br>';
-            echo '<a href="/security/login/">Войти</a>';
-        }
-        echo '<br>';
-
+        $view->students=$students;
+        $view->stud_id=$stud_id;
+        $this->template->body = $view;
     }
 
     public function action_update()
@@ -64,7 +48,7 @@ class Controller_Group extends Controller {
         $group_id = $this->request->param('id');
 
         $group = ORM::factory('group',$group_id);
-        echo 'Группа'.$group->name.'<br>';
+        echo 'Группа '.$group->name.'<br>';
 
         if($this->request->method() == 'POST'){
             $name=$this->request->post('name');
@@ -74,8 +58,9 @@ class Controller_Group extends Controller {
         }
         else{
             $view = View::factory('group/update');
+            $view->group = $group;
             $view->group_id = $group_id;
-            $this->response->body($view);
+            $this->template->body = $view;
         }
 
 
