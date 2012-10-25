@@ -27,10 +27,11 @@ class Controller_Welcome extends Controller {
 
         $students = ORM::factory('student')->find_all();
 
-            foreach($students as $student){
+           /* foreach($students as $student){
                 echo  $student->id .'='. $student->name.'=';
                 echo '<br>';
             }
+           */
 
 
         //$this->response->body('hello, world!');

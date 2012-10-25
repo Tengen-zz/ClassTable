@@ -10,7 +10,7 @@
     <?endif?>
  <?foreach($students as $student):?>
     <?if($student->group_id == $group_id):?>
-        <a href="/student/read/"<?=$student->id?>"><?=$student->name?></a>
+        <a href="/student/read/<?=$student->id?>"><?=$student->name?></a>
         <br>
     <?endif?>
 <?endforeach?>

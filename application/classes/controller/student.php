@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Student extends Controller {
+class Controller_Student extends Controller_Site {
 
     public function action_index()
     {
@@ -27,7 +27,7 @@ class Controller_Student extends Controller {
             $student->password=$password;
             $session = Session::instance();
             $group_id = $session->get('group_id');
-            echo $group_id;
+            //echo $group_id;
             $session->delete('group_id');
             $student->is_admin = 0;
            // $group_id = $this->request->param('id');
@@ -47,22 +47,11 @@ class Controller_Student extends Controller {
         $student_id = $this->request->param('id');
         $student = ORM::factory('student', $student_id);
         $student1= ORM::factory('student', $stud_id);
-        echo 'Студент'.' '.$student->name.'</br>';
-        echo 'Номер телефона'.' '.$student->phone.'<br>';
-        echo 'Почта'.' '.$student->email.'<br>';
-        if($student1->is_admin!=0){
-            echo '<a href="/student/delete/'.$student->id.'">Удалить</a>';
-            echo '<br>';
-        }
-        if($stud_id == $student->id or $student1->is_admin!=0){
-        echo '<a href="/student/update/'.$student->id.'">Изменить</a>';
-        echo '<br>';
-        }
-        echo '<a href="/group/read/'.$student->group_id.'">В группу</a>';
-        echo '<br>';
-        if($stud_id!=NUll){
-            echo '<a href="/security/exit/">Выйти('.$student1->name.')</a>';
-        }
+        $view = View::factory('student/read');
+        $view->student=$student;
+        $view->student1=$student1;
+        $view->stud_id=$stud_id;
+        $this->template->body = $view;
     }
 
     public function action_update()

@@ -48,8 +48,8 @@ class Controller_Group extends Controller_Site {
         $group_id = $this->request->param('id');
 
         $group = ORM::factory('group',$group_id);
-        echo 'Группа '.$group->name.'<br>';
-
+        $view = View::factory('group/update');
+        $view->group=$group;
         if($this->request->method() == 'POST'){
             $name=$this->request->post('name');
             $group->name=$name;
@@ -62,7 +62,7 @@ class Controller_Group extends Controller_Site {
             $view->group_id = $group_id;
             $this->template->body = $view;
         }
-
+        $this->template->body = $view;
 
     }
 
