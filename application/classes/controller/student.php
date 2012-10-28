@@ -36,7 +36,7 @@ class Controller_Student extends Controller_Site {
             $this->request->redirect('/group/read/'.$group_id);
         } else {
             $view = View::factory('student/create');
-            $this->response->body($view);
+            $this->template->body = $view;
         }
     }
 
@@ -59,7 +59,8 @@ class Controller_Student extends Controller_Site {
         $student_id = $this->request->param('id');
 
         $student = ORM::factory('student',$student_id);
-
+        $view = View::factory('student/update');
+        $view->student = $student;
         if($this->request->method() == 'POST'){
 
             $password = $this->request->post('password');
@@ -82,9 +83,10 @@ class Controller_Student extends Controller_Site {
         else{
             $view = View::factory('student/update');
             $view->student_id = $student_id;
-            $this->response->body($view);
+            $view->student = $student;
+            $this->template->body = $view;
         }
-
+        $this->template->body = $view;
 
     }
 

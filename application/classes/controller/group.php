@@ -4,8 +4,13 @@ class Controller_Group extends Controller_Site {
 
 	public function action_index()
 	{
+        $session = Session::instance();
+        $stud_id = $session->get('stud_id');
+        $student= ORM::factory('student',$stud_id);
+        $is_admin=$student->is_admin;
         $groups = ORM::factory('group')->find_all();
         $view = View::factory('group/list');
+        $view->isadmin = $is_admin;
         $view->groups123 = $groups;
         //$this->response->body($view);
 	    $this->template->body = $view;
