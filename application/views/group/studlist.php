@@ -18,10 +18,6 @@
     <a href="/student/create">Добавить студента</a>
 <?endif?>
 <a href="/group/index/">Список групп</a>
-<?if($stud_id==NULL):?>
-    <br>
-    <a href="/security/login/">Войти</a>
-<?endif?>
 <br>
 </body>
 </html>
