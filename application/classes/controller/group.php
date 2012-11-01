@@ -46,6 +46,10 @@ class Controller_Group extends Controller_Site {
         $view->students=$students;
         $view->stud_id=$stud_id;
         $this->template->body = $view;
+
+        $view1 = View::factory('raspisanie/list');
+        $this->template->body = $view1;
+
     }
 
     public function action_update()
