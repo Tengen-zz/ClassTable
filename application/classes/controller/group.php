@@ -48,6 +48,11 @@ class Controller_Group extends Controller_Site {
         $this->template->body = $view;
 
         $view1 = View::factory('raspisanie/list');
+        $view1->is_admin = $s->is_admin;
+        $view1->group_id= $group->id;
+       // $tables = ORM::factory('table')->where('group_id','=',$group_id)->find();
+       // $view1->tables=$tables;
+
         $this->template->body = $view1;
 
     }
