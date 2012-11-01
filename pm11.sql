@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Окт 22 2012 г., 15:12
+-- Время создания: Ноя 02 2012 г., 00:56
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -55,14 +55,37 @@ CREATE TABLE IF NOT EXISTS `students` (
   `is_admin` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `group_id` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Дамп данных таблицы `students`
 --
 
 INSERT INTO `students` (`id`, `name`, `phone`, `email`, `group_id`, `password`, `is_admin`) VALUES
-(11, 'Стальнов', '123', '123', 18, '123', 1);
+(11, 'Стальнов', '123', '123', 18, '123', 1),
+(12, 'qq', 'qq', 'qq', 18, 'qq', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `table`
+--
+
+CREATE TABLE IF NOT EXISTS `table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pair` int(11) NOT NULL,
+  `day` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `subject` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `group_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `table`
+--
+
+INSERT INTO `table` (`id`, `pair`, `day`, `subject`, `group_id`) VALUES
+(1, 1, 'Понедельник', 'ЯиМП', 18);
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

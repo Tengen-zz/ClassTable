@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f7b3c494-12c2-488d-b4d0-3379c7f181b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/classes/controller/group.php" afterPath="$PROJECT_DIR$/application/classes/controller/group.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pm11.sql" afterPath="$PROJECT_DIR$/pm11.sql" />
     </list>
     <ignored path="pm11.localhost.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -363,7 +363,11 @@
       <created>1351775563849</created>
       <updated>1351775563849</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Пытался сделать расписание(не получилось)">
+      <created>1351778048719</created>
+      <updated>1351778048719</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -428,7 +432,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="гриша смотри сюда" />
+    <option name="LAST_COMMIT_MESSAGE" value="Пытался сделать расписание(не получилось)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -445,6 +449,7 @@
     <MESSAGE value="Сделал шаблон и исправил некоторые ошибки" />
     <MESSAGE value="еще одной ошибкой меньше =)" />
     <MESSAGE value="гриша смотри сюда" />
+    <MESSAGE value="Пытался сделать расписание(не получилось)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
