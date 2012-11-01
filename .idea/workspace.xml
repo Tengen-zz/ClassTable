@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f7b3c494-12c2-488d-b4d0-3379c7f181b0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pm11.sql" afterPath="$PROJECT_DIR$/pm11.sql" />
     </list>
     <ignored path="pm11.localhost.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -367,7 +366,11 @@
       <created>1351778048719</created>
       <updated>1351778048719</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Пытался сделать расписание(не получилось)">
+      <created>1351778232004</created>
+      <updated>1351778232004</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
